@@ -1,0 +1,77 @@
+﻿<Window x:Class="Project_1.FindTransport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_1"
+        mc:Ignorable="d"
+        Title="FindTransport" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" CornerRadius="17" BorderThickness="1" BorderBrush="black"
+                Background="WhiteSmoke" Padding="10">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="LightGray"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="DarkGray"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="LightGray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Loaded="Grid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Find Transport" FontSize="25" VerticalAlignment="Center" Height="40" Width="164"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="cbbFTransType" HorizontalAlignment="Left" Margin="138,79,0,0" VerticalAlignment="Top" Width="204"/>
+            <ComboBox x:Name="cbbFTransSeat" HorizontalAlignment="Left" Margin="138,127,0,0" VerticalAlignment="Top" Width="204"/>
+
+            <ListView x:Name="lvTransport" Grid.Column="1" ItemsSource="{Binding}" SelectionChanged="lvTransport_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="IDTransport" Width="70" DisplayMemberBinding="{Binding IDTransport}"/>
+                        <GridViewColumn Header="Seat" Width="60" DisplayMemberBinding="{Binding Seat}"/>
+                        <GridViewColumn Header="Type" Width="66" DisplayMemberBinding="{Binding Type}"/>
+                        <GridViewColumn Header="Brand" Width="60" DisplayMemberBinding="{Binding Brand}"/>
+                        <GridViewColumn Header="YearOfPurchase" Width="100" DisplayMemberBinding="{Binding YearOfPurchase}"/>
+                        <GridViewColumn Header="Km" Width="50" DisplayMemberBinding="{Binding Km}"/>
+                        <GridViewColumn Header="Insurance" Width="55" DisplayMemberBinding="{Binding Insurance}"/>
+                        <GridViewColumn Header="Price" Width="120" DisplayMemberBinding="{Binding Price}"/>
+                        <GridViewColumn Header="Status" Width="100" DisplayMemberBinding="{Binding Status}"/>
+                        <GridViewColumn Header="CCCDOwner" Width="100" DisplayMemberBinding="{Binding CCCDOwner}"/>
+                        <GridViewColumn Header="Active" Width="70" DisplayMemberBinding="{Binding Active}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button x:Name="btnFindTransport" Content="Find" HorizontalAlignment="Left" Margin="53,289,0,0" VerticalAlignment="Top" Height="37" Width="124" Click="btnFindTransport_Click"/>
+            <Button x:Name="btnFindALl" Content="Find All" HorizontalAlignment="Left" Margin="218,289,0,0" VerticalAlignment="Top" Width="124" Height="37" Click="btnFindALl_Click"/>
+            <DatePicker x:Name="dtp" HorizontalAlignment="Left" Margin="138,173,0,0" VerticalAlignment="Top" Width="204"  SelectedDateChanged="dtp_SelectedDateChanged" PreviewKeyDown="dtp_PreviewKeyDown"/>
+            <TextBox x:Name="txbRentalDays" HorizontalAlignment="Left" Margin="138,225,0,0" TextWrapping="Wrap" FontSize="16" Text="" VerticalAlignment="Top" Width="120"/>
+        </Grid>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="107,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Select Transport Options:" FontSize="15" VerticalAlignment="Top" Height="22" Width="172"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="27,79,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Type:" TextAlignment="Center" FontSize="15" VerticalAlignment="Top" Height="22" Width="106"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="27,126,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Seat:" TextAlignment="Center" FontSize="15" VerticalAlignment="Top" Height="22" Width="106"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="27,175,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Date Of Hire:" TextAlignment="Center" FontSize="15" VerticalAlignment="Top" Height="22" Width="97"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="27,226,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Rental Days:" TextAlignment="Center" FontSize="15" VerticalAlignment="Top" Height="22" Width="106"/>
+
+    </Grid>
+</Window>

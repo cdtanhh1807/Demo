@@ -1,0 +1,105 @@
+﻿<Window x:Class="Project_1.ContractWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_1"
+        mc:Ignorable="d"
+        Title="ContractWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" CornerRadius="17" BorderThickness="1" BorderBrush="black"
+                                Background="WhiteSmoke" Padding="10">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="LightGray"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="DarkGray"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="LightGray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Contract" FontSize="25" VerticalAlignment="Center" Height="40" Width="98"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="Black" BorderThickness="1"></Border>
+            <Border BorderThickness="1" BorderBrush="Black" Grid.Column="1"></Border>
+            <Border BorderThickness="1" BorderBrush="Black" Grid.Column="2"/>
+
+            <TextBox x:Name="txbClientName" Grid.Column="0" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left" Margin="84,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="143"/>
+            <TextBox x:Name="txbClientCCCD" Grid.Column="0" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left" Margin="84,113,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="143"/>
+            <TextBox x:Name="txbClientPhone" Grid.Column="0" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left" Margin="84,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="143"/>
+            <TextBox x:Name="txbClientAddress" Grid.Column="0" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left" Margin="84,221,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="143"/>
+            <TextBox x:Name="txbOwnerName" Grid.Column="1" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left" Margin="97,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="154"/>
+            <TextBox x:Name="txbOwnerCCCD" Grid.Column="1" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left" Margin="97,113,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="154"/>
+            <TextBox x:Name="txbOwnerPhone" Grid.Column="1" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left" Margin="97,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="154"/>
+            <TextBox x:Name="txbOwnerAddress" Grid.Column="1" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left" Margin="97,221,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="154"/>
+            <TextBox x:Name="txbTransID" Grid.Column="2" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left" Margin="53,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="74"/>
+            <TextBox x:Name="txbTransSeat" Grid.Column="2" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left" Margin="59,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
+            <TextBox x:Name="txbTransType" Grid.Column="2" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left" Margin="59,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
+            <TextBox x:Name="txbTransBrand" Grid.Column="2" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left" Margin="63,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="74"/>
+            <TextBox x:Name="txbTransKm" Grid.Column="2" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left" Margin="197,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
+            <TextBox x:Name="txbTransStatus" Grid.Column="2" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left" Margin="187,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="79"/>
+            <TextBox x:Name="txbTransInsu" Grid.Column="2" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left" Margin="219,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="43"/>
+            <TextBox x:Name="txbTransPrice" Grid.Column="2" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left" Margin="182,197,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="82"/>
+            <ComboBox x:Name="cbbDriver" Grid.Column="2" HorizontalAlignment="Left" Margin="100,245,0,0" VerticalAlignment="Top" Width="141"/>
+
+
+        </Grid>
+
+        <TextBlock HorizontalAlignment="Left" Margin="88,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Client" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="25" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Margin="351,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Owner" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="25" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,60,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Name:" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="25" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,114,0,0" Grid.Row="1" TextWrapping="Wrap" Text="CCCD:" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="25" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,165,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Phone:" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="25" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,222,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Address:" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="25" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Margin="266,60,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Name:" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="25" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Margin="266,114,0,0" Grid.Row="1" TextWrapping="Wrap" Text="CCCD:" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="25" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Margin="266,165,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Phone:" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="25" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Margin="266,222,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Address:" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="25" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Margin="625,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Transport" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="25" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Margin="518,60,0,0" Grid.Row="1" TextWrapping="Wrap" Text="ID:" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="25" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Margin="518,109,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Seat:" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="25" Width="72"/>
+        <TextBlock HorizontalAlignment="Left" Margin="517,152,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Type:" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="26" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Margin="516,198,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Brand:" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="26" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Margin="662,59,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Km:" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="26" Width="72"/>
+        <TextBlock HorizontalAlignment="Left" Margin="661,152,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Insurance:" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="26" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Margin="652,198,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Price:" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="26" Width="60"/>
+        <TextBlock HorizontalAlignment="Left" Margin="656,108,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Status:" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="26" Width="51"/>
+        <TextBlock HorizontalAlignment="Left" Margin="540,244,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Driver:" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Height="26" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Margin="34,17,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Rental Date:" FontSize="16" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="34,58,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Rental Days:" FontSize="16" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="240,17,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Deposit:" FontSize="16" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="226,59,0,0" Grid.Row="2" TextWrapping="Wrap" Text="ID Contract:" FontSize="16" VerticalAlignment="Top"/>
+        <Button x:Name="btnCreatCon" Content="Tạo hợp đồng" HorizontalAlignment="Left" Margin="646,9,0,0" Grid.Row="2" VerticalAlignment="Top" Height="37" Width="104" Click="btnCreatCon_Click"/>
+        <Button x:Name="btnContractPayments" Content="Thanh toán hợp đồng" HorizontalAlignment="Left" Margin="524,52,0,0" Grid.Row="2" VerticalAlignment="Top" Height="37" Width="226" Click="btnContractPayments_Click"/>
+        <TextBox x:Name="txbContractDeposit" HorizontalAlignment="Center" Margin="0,17,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Width="157"/>
+        <TextBox x:Name="txbContractIDCon" HorizontalAlignment="Left" Margin="322,59,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txbContractRentalDate" HorizontalAlignment="Left" Margin="124,17,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Width="110"/>
+        <TextBox x:Name="txbContractRentalDays" HorizontalAlignment="Left" Margin="124,58,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Width="78"/>
+        <Button x:Name="btnCancelCon" Content="Hủy hợp đồng" HorizontalAlignment="Left" Margin="524,9,0,0" Grid.Row="2" VerticalAlignment="Top" Height="37" Width="104" Click="btnCancelCon_Click"/>
+
+    </Grid>
+</Window>
